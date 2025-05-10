@@ -1,0 +1,34 @@
+CREATE OR REPLACE PROCEDURE insertar_equipo (
+  p_estado_id   IN NUMBER,
+  p_torre_id    IN NUMBER,
+  p_monitor_id  IN NUMBER,
+  p_teclado_id  IN NUMBER,
+  p_raton_id    IN NUMBER,
+  p_otro_id     IN NUMBER,
+  p_mensaje     OUT VARCHAR2
+) IS
+  v_count NUMBER;
+BEGIN
+  SELECT COUNT(*) INTO v_count FROM estados WHERE id = p_estado_id;
+  IF v_count = 0 THEN
+    p_mensaje := 'Error: Estado no existe';
+    RETURN;
+  END IF;
+
+  SELECT COUNT(*) INTO v_count FROM torres WHERE id = p_torre_id;
+  IF v_count = 0 THEN
+    p_mensaje := 'Error: Torre no existe';
+    RETURN;
+  END IF;
+
+
+  INSERT INTO equipos (estado_id, torre_id, monitor_id, teclado_id, raton_id, otro_id)
+  VALUES (p_estado_id, p_torre_id, p_monitor_id, p_teclado_id, p_raton_id, p_otro_id);
+
+  p_mensaje := 'Equipo insertado correctamente';
+
+EXCEPTION
+  WHEN OTHERS THEN
+    p_mensaje := 'Error al insertar equipo: ' || SQLERRM;
+END;
+/
