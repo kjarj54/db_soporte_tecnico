@@ -1,5 +1,5 @@
-﻿prompt PL/SQL Developer Export Tables for user KARAUZ@192.168.0.17:1521/XEPDB1
-prompt Created by kevin on jueves, 8 de mayo de 2025
+﻿prompt PL/SQL Developer Export Tables for user KARAUZ@192.168.0.22:1521/XEPDB1
+prompt Created by kevin on domingo, 11 de mayo de 2025
 set feedback off
 set define off
 
@@ -843,16 +843,16 @@ commit;
 prompt 2 records loaded
 prompt Loading SOPORTE_ACT...
 insert into SOPORTE_ACT (id, usuario_id, actividad_id, tipo_id, fecha, origen, localidad, atencion, descripcion, tiempo_solucion, solucion)
-values (1, 1, 1, 1, to_date('09-05-2025 04:15:22', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina A', 'Soporte presencial', 'Revisar conexi�n red.', '+00 01:00:00.000000', 'Cable da�ado reemplazado');
+values (1, 1, 1, 1, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina A', 'Soporte presencial', 'Revisar conexi�n red.', '+00 01:00:00.000000', 'Cable da�ado reemplazado');
 insert into SOPORTE_ACT (id, usuario_id, actividad_id, tipo_id, fecha, origen, localidad, atencion, descripcion, tiempo_solucion, solucion)
-values (2, 2, 1, 1, to_date('09-05-2025 04:15:22', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina B', 'Remoto', 'Problemas de sonido.', '+00 00:30:00.000000', 'Reinstalaci�n de drivers');
+values (2, 2, 1, 1, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina B', 'Remoto', 'Problemas de sonido.', '+00 00:30:00.000000', 'Reinstalaci�n de drivers');
 commit;
 prompt 2 records loaded
 prompt Loading TALLER_ACT...
 insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
-values (1, 1, 2, to_date('09-05-2025 04:15:22', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Central', 'Dep. Mantenimiento', 'Revisi�n completa', 'Se reemplaz� ventilador');
+values (1, 1, 2, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Central', 'Dep. Mantenimiento', 'Revisi�n completa', 'Se reemplaz� ventilador');
 insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
-values (2, 2, 2, to_date('09-05-2025 04:15:22', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Secundario', 'Dep. T�cnico', 'Limpieza interna', 'Eliminaci�n de polvo');
+values (2, 2, 2, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Secundario', 'Dep. T�cnico', 'Limpieza interna', 'Eliminaci�n de polvo');
 commit;
 prompt 2 records loaded
 
