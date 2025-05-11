@@ -11,25 +11,31 @@ CREATE OR REPLACE PROCEDURE insertar_usuario (
 ) IS
   v_count NUMBER;
 BEGIN
-  SELECT COUNT(id) INTO v_count FROM generos WHERE id = p_genero_id;
-  IF v_count = 0 THEN
-    p_mensaje := 'Error: GÈnero no v·lido';
-    RETURN;
-  END IF;
+  BEGIN
+    -- Validar que el g√©nero exista
+    SELECT COUNT(id) INTO v_count FROM generos WHERE id = p_genero_id;
+    IF v_count = 0 THEN
+      p_mensaje := 'Error: G√©nero no v√°lido';
+      RETURN;
+    END IF;
 
-  SELECT COUNT(id) INTO v_count FROM roles WHERE id = p_rol_id;
-  IF v_count = 0 THEN
-    p_mensaje := 'Error: Rol no v·lido';
-    RETURN;
-  END IF;
+    -- Validar que el rol exista
+    SELECT COUNT(id) INTO v_count FROM roles WHERE id = p_rol_id;
+    IF v_count = 0 THEN
+      p_mensaje := 'Error: Rol no v√°lido';
+      RETURN;
+    END IF;
 
-  INSERT INTO usuarios (n_usuario, cedula, nombre, apellido, contra, genero_id, rol_id, correo)
-  VALUES (p_n_usuario, p_cedula, p_nombre, p_apellido, p_contra, p_genero_id, p_rol_id, p_correo);
+    -- Insertar el usuario
+    INSERT INTO usuarios (n_usuario, cedula, nombre, apellido, contra, genero_id, rol_id, correo)
+    VALUES (p_n_usuario, p_cedula, p_nombre, p_apellido, p_contra, p_genero_id, p_rol_id, p_correo);
 
-  p_mensaje := 'Usuario insertado correctamente';
-
-EXCEPTION
-  WHEN OTHERS THEN
-    p_mensaje := 'Error al insertar usuario: ' || SQLERRM;
+    COMMIT;
+    p_mensaje := 'Usuario insertado correctamente';
+  EXCEPTION
+    WHEN OTHERS THEN
+      ROLLBACK;
+      p_mensaje := 'Error al insertar usuario: ' || SQLERRM;
+  END;
 END;
 /
