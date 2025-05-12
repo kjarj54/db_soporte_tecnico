@@ -734,71 +734,107 @@ insert into ESTADOS (id, estado)
 values (1, 'Activo');
 insert into ESTADOS (id, estado)
 values (2, 'En Reparaci�n');
+insert into ESTADOS (id, estado)
+values (3, 'Reparado');
 commit;
-prompt 2 records loaded
+prompt 3 records loaded
 prompt Loading MONITORES...
 insert into MONITORES (id, n_bien, n_serie, marca, modelo)
 values (1, '001-MON', 'MSN123', 'Samsung', 'S22');
 insert into MONITORES (id, n_bien, n_serie, marca, modelo)
 values (2, '002-MON', 'MSN456', 'LG', 'UltraFine');
+insert into MONITORES (id, n_bien, n_serie, marca, modelo)
+values (3, '003-MON', 'MSN789', 'Dell', 'P2419H');
+insert into MONITORES (id, n_bien, n_serie, marca, modelo)
+values (4, '004-MON', 'MSN101', 'ASUS', 'ProArt');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading OTROS...
 insert into OTROS (id, dispositivo, n_bien, n_serie, marca, modelo)
 values (1, 'UPS', '001-UPS', 'UPS123', 'APC', 'Back-UPS');
 insert into OTROS (id, dispositivo, n_bien, n_serie, marca, modelo)
 values (2, 'Webcam', '002-CAM', 'CAM123', 'Logitech', 'C920');
+insert into OTROS (id, dispositivo, n_bien, n_serie, marca, modelo)
+values (3, 'Parlantes', '003-PAR', 'PAR123', 'Logitech', 'Z313');
+insert into OTROS (id, dispositivo, n_bien, n_serie, marca, modelo)
+values (4, 'Impresora', '004-IMP', 'IMP123', 'HP', 'LaserJet Pro');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading RATONES...
 insert into RATONES (id, n_bien, n_serie, marca, modelo)
 values (1, '001-RAT', 'RSN123', 'Genius', 'DX-110');
 insert into RATONES (id, n_bien, n_serie, marca, modelo)
 values (2, '002-RAT', 'RSN456', 'HP', 'X3000');
+insert into RATONES (id, n_bien, n_serie, marca, modelo)
+values (3, '003-RAT', 'RSN789', 'Dell', 'MS116');
+insert into RATONES (id, n_bien, n_serie, marca, modelo)
+values (4, '004-RAT', 'RSN101', 'Razer', 'DeathAdder');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading TECLADOS...
 insert into TECLADOS (id, n_bien, n_serie, marca, modelo)
 values (1, '001-TECL', 'TSN123', 'Logitech', 'K120');
 insert into TECLADOS (id, n_bien, n_serie, marca, modelo)
 values (2, '002-TECL', 'TSN456', 'Microsoft', 'Wired 600');
+insert into TECLADOS (id, n_bien, n_serie, marca, modelo)
+values (3, '003-TECL', 'TSN789', 'Dell', 'KB216');
+insert into TECLADOS (id, n_bien, n_serie, marca, modelo)
+values (4, '004-TECL', 'TSN101', 'Razer', 'BlackWidow');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading DISCOS...
 insert into DISCOS (id, disco_duro)
 values (1, '1TB HDD');
 insert into DISCOS (id, disco_duro)
 values (2, '500GB SSD');
+insert into DISCOS (id, disco_duro)
+values (3, '240GB SSD');
+insert into DISCOS (id, disco_duro)
+values (4, '2TB HDD');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading MEMORIAS...
 insert into MEMORIAS (id, marca, capacidad)
 values (1, 'Kingston', '8GB');
 insert into MEMORIAS (id, marca, capacidad)
 values (2, 'Corsair', '16GB');
+insert into MEMORIAS (id, marca, capacidad)
+values (3, 'Crucial', '4GB');
+insert into MEMORIAS (id, marca, capacidad)
+values (4, 'G.Skill', '32GB');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading TORRES...
 insert into TORRES (id, n_bien, n_serie, marca, modelo, procesador, discoduro_id, memoria_id)
 values (1, '001-TOR', 'SN1234', 'Dell', 'Optiplex', 'Intel i5', 1, 1);
 insert into TORRES (id, n_bien, n_serie, marca, modelo, procesador, discoduro_id, memoria_id)
 values (2, '002-TOR', 'SN5678', 'HP', 'EliteDesk', 'Intel i7', 2, 2);
+insert into TORRES (id, n_bien, n_serie, marca, modelo, procesador, discoduro_id, memoria_id)
+values (3, '003-TOR', 'SN9101', 'Lenovo', 'ThinkCentre', 'AMD Ryzen 5', 3, 3);
+insert into TORRES (id, n_bien, n_serie, marca, modelo, procesador, discoduro_id, memoria_id)
+values (4, '004-TOR', 'SN1122', 'Asus', 'ProDesk', 'Intel i9', 4, 4);
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading EQUIPOS...
 insert into EQUIPOS (id, estado_id, torre_id, monitor_id, teclado_id, raton_id, otro_id)
 values (1, 1, 1, 1, 1, 1, 1);
 insert into EQUIPOS (id, estado_id, torre_id, monitor_id, teclado_id, raton_id, otro_id)
 values (2, 2, 2, 2, 2, 2, 2);
+insert into EQUIPOS (id, estado_id, torre_id, monitor_id, teclado_id, raton_id, otro_id)
+values (3, 3, 3, 3, 3, 3, 3);
+insert into EQUIPOS (id, estado_id, torre_id, monitor_id, teclado_id, raton_id, otro_id)
+values (4, 3, 4, 4, 4, 4, 4);
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading TIPOS_ACT...
 insert into TIPOS_ACT (id, tipo)
 values (1, 'Soporte T�cnico');
 insert into TIPOS_ACT (id, tipo)
 values (2, 'Mantenimiento Taller');
+insert into TIPOS_ACT (id, tipo)
+values (3, 'Reparaci�n');
 commit;
-prompt 2 records loaded
+prompt 3 records loaded
 prompt Loading GENEROS...
 insert into GENEROS (id, genero)
 values (1, 'Masculino');
@@ -825,8 +861,12 @@ insert into ACTIVIDADES (id, usuario_id, tipo_id, equipo_id)
 values (1, 1, 1, 1);
 insert into ACTIVIDADES (id, usuario_id, tipo_id, equipo_id)
 values (2, 2, 2, 2);
+insert into ACTIVIDADES (id, usuario_id, tipo_id, equipo_id)
+values (3, 1, 3, 3);
+insert into ACTIVIDADES (id, usuario_id, tipo_id, equipo_id)
+values (4, 2, 3, 4);
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading FEEDBACK...
 insert into FEEDBACK (id, usuario_id, comentarios)
 values (1, 1, 'Excelente atenci�n del t�cnico');
@@ -839,22 +879,30 @@ insert into HISTORIAL (id, actividad_id, equipo_id)
 values (1, 1, 1);
 insert into HISTORIAL (id, actividad_id, equipo_id)
 values (2, 2, 2);
+insert into HISTORIAL (id, actividad_id, equipo_id)
+values (3, 3, 3);
+insert into HISTORIAL (id, actividad_id, equipo_id)
+values (4, 4, 4);
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 prompt Loading SOPORTE_ACT...
 insert into SOPORTE_ACT (id, usuario_id, actividad_id, tipo_id, fecha, origen, localidad, atencion, descripcion, tiempo_solucion, solucion)
-values (1, 1, 1, 1, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina A', 'Soporte presencial', 'Revisar conexi�n red.', '+00 01:00:00.000000', 'Cable da�ado reemplazado');
+values (1, 1, 1, 1, to_date('12-05-2025 00:03:05', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina A', 'Soporte presencial', 'Revisar conexi�n red.', '+00 01:00:00.000000', 'Cable da�ado reemplazado');
 insert into SOPORTE_ACT (id, usuario_id, actividad_id, tipo_id, fecha, origen, localidad, atencion, descripcion, tiempo_solucion, solucion)
-values (2, 2, 1, 1, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina B', 'Remoto', 'Problemas de sonido.', '+00 00:30:00.000000', 'Reinstalaci�n de drivers');
+values (2, 2, 1, 1, to_date('12-05-2025 00:03:05', 'dd-mm-yyyy hh24:mi:ss'), 'Usuario Final', 'Oficina B', 'Remoto', 'Problemas de sonido.', '+00 00:30:00.000000', 'Reinstalaci�n de drivers');
 commit;
 prompt 2 records loaded
 prompt Loading TALLER_ACT...
 insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
-values (1, 1, 2, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Central', 'Dep. Mantenimiento', 'Revisi�n completa', 'Se reemplaz� ventilador');
+values (1, 1, 2, to_date('12-05-2025 00:03:05', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Central', 'Dep. Mantenimiento', 'Revisi�n completa', 'Se reemplaz� ventilador');
 insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
-values (2, 2, 2, to_date('11-05-2025 21:55:06', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Secundario', 'Dep. T�cnico', 'Limpieza interna', 'Eliminaci�n de polvo');
+values (2, 2, 2, to_date('12-05-2025 00:03:05', 'dd-mm-yyyy hh24:mi:ss'), 'Taller Secundario', 'Dep. T�cnico', 'Limpieza interna', 'Eliminaci�n de polvo');
+insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
+values (3, 1, 3, to_date('01-05-2025', 'dd-mm-yyyy'), 'Taller Principal', 'Dep. Reparaciones', 'Reparaci�n de fuente de poder', 'Se sustituy� fuente de poder defectuosa');
+insert into TALLER_ACT (id, usuario_id, actividad_id, fecha, origen, localidad, proceso, descripcion)
+values (4, 2, 4, to_date('05-05-2025', 'dd-mm-yyyy'), 'Taller Central', 'Dep. Componentes', 'Sustituci�n de tarjeta madre', 'Se cambi� la tarjeta madre por una nueva');
 commit;
-prompt 2 records loaded
+prompt 4 records loaded
 
 set feedback on
 set define on
